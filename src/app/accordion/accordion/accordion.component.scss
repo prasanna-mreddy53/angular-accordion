@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+
+.accordion {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    background: #fff;
+    border-radius: 4px;
+    .menu{
+      position: relative;
+      padding: 15px 15px 15px 45px;
+      color: #4d4d4d;
+      font-weight: bold;
+      border-bottom: 2px solid #000;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+    li.active {
+      border-bottom: 2px solid #000;
+      .menu {
+        color: #4d4d4d;
+        background-color: #ccc;
+        border-bottom: 0;
+      }
+      .submenu {
+      margin: 24px;
+      min-height: 42px;
+      @media (max-width: 992px) { 
+        min-height: 80px;
+       }
+      @media (max-width: 576px) { 
+      min-height: 128px;
+      }
+       
+      }
+      
+      .plus {
+        display: none;
+      }
+      .minus {
+        display: block;
+        right: 1rem;
+        left: auto;
+        float: right;
+        height: 25px;
+      }
+    }
+    
+    li{
+      .minus {
+        display: none;
+      }
+      .question {
+        position: absolute;
+        left: 1rem;
+        transition: all 0.4s ease;
+        font-weight: bold;
+        color: black;
+        font-size: 18px;
+        top: 14px;
+      }
+      .plus {
+        right: 1rem;
+        left: auto;
+        float: right;
+        height: 25px;
+      }
+    } 
+    .submenu {
+      height: 0;
+      overflow: hidden;
+      background: white;
+      font-size: 14px;
+      transition: height 0.4s ease;
+      margin: 0 20px;
+    }
+    .f-question{
+      margin-left: 10px;
+    }
+  }
+  
+  
+ 
+  .accordion li:last-child .submenu {
+    border-radius: 0 0 4px 4px;
+  }
+  
+  .accordion li:last-child .submenu li:last-child {
+    border-bottom: 0;
+  }
+
+    

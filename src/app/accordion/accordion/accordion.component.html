@@ -1,0 +1,21 @@
+
+<ng-template [ngIf]="faqs"><ul id="accordion" class="accordion" *ngIf="faqs">
+    <li *ngFor="let faq of faqs; let i = index" 
+      [class.active]="faq.active">
+      <div class="menu" (click)="toggle(i)">
+        <div class="question">Q{{i+1}}</div>
+        <div class="f-question">
+            {{ faq.question }}
+            <img class="plus" src="../../../assets/plus-icon.svg" alt="plus-icon" >
+            <img class="minus" src="../../../assets/delete-icon.svg" alt="Trulli" >
+        </div>
+        
+      </div>
+      <ul class="submenu" #submenu 
+        [style.height.px]="faq.active ? submenu.scrollHeight : 0">
+        <li>
+            {{faq.answer}}
+          </li>
+      </ul>
+    </li>
+  </ul></ng-template>
